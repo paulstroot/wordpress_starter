@@ -1,0 +1,26 @@
+# This makefile is NOT run in this codebase. When the theme is loaded into the Ocupop Wordpress Docker project, it is run there.
+# Define all default plug-ins and themes for this theme here
+# Commands are un using wp-cli Commands
+# Every command should start with a tab, not two spaces.
+
+theme-init:
+	@echo "*** INSTALL SOME PLUGINS. ***"
+	wp plugin install advanced-custom-fields --activate
+	wp plugin install better-search-replace --activate
+	wp plugin install broken-link-checker --activate
+	wp plugin install enable-media-replace --activate
+	wp plugin install formidable --activate
+	wp plugin install google-analytics-for-wordpress
+	wp plugin install regenerate-thumbnails --activate
+	wp plugin install sucuri-scanner --activate
+	wp plugin install updraftplus --activate
+	wp plugin install wp-super-cache --activate
+	wp plugin install wordpress-seo
+
+	wp plugin delete hello
+	wp plugin delete akismet
+
+	wp theme install twentytwentyfour
+
+	wp theme delete twentytwentytwo
+	wp theme delete twentytwentythree

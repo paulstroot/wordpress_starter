@@ -1,0 +1,11 @@
+/**
+Each <section> element has vertial margins, UNLESS it has a background color.
+In that case the spacing should be padding.
+*/
+
+section{
+  @apply my-8;
+  &[class^="bg-"]{
+    @apply my-0 py-8;
+  }
+}

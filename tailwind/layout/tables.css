@@ -1,0 +1,89 @@
+.table {
+  @apply rounded-md border border-mid-200;
+
+  .mobile-label {
+    @apply md:hidden font-bold mr-2 inline-block;
+  }
+
+  thead {
+    @apply mobile:hidden;
+    /* @apply rounded-t-lg overflow-hidden; */
+    th {
+      @apply font-thin text-light;
+      @apply bg-dark;
+      &:first-child {
+        @apply rounded-tl-lg;
+      }
+      &:last-child {
+        @apply rounded-tr-lg;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        @apply bg-mid-0 dark:bg-mid-100;
+      }
+      &:last-child td:first-child {
+        @apply rounded-bl-lg;
+      }
+      &:last-child td:last-child {
+        @apply rounded-br-lg;
+      }
+    }
+  }
+
+  .sort-arrow {
+    @apply inline-block -my-2 text-xl text-primary;
+  }
+  .reorder-arrows {
+    @apply flex flex-col gap-2 text-xl;
+    button {
+      @apply w-0 h-0 !p-0;
+      @apply border-l-[0.35em] border-l-transparent;
+      @apply border-r-[0.35em] border-r-transparent;
+
+      &:first-child {
+        @apply border-b-[0.35em] border-b-inherit;
+        @apply border-b-[0.35em] hover:border-b-primary;
+      }
+      &:last-child {
+        @apply border-t-[0.35em] hover:border-t-primary;
+      }
+    }
+  }
+
+  /* RESPONSIVE STYLES */
+  tbody {
+    @apply bg-transparent;
+    tr {
+      @apply mobile:flex mobile:flex-col mobile:relative rounded-lg hover:bg-inherit;
+      td {
+        @apply mobile:block;
+        @apply mobile:order-2;
+        &.title {
+          @apply mobile:bg-mid-300 mobile:order-1 mobile:pr-12 mobile:font-bold;
+        }
+        &.accepted {
+          @apply mobile:order-9;
+          .rounded-full {
+            @apply mobile:inline-block;
+            @apply mobile:bg-transparent mobile:border-none;
+            &:after {
+              @apply mobile:content-['No'];
+            }
+            &.bg-success:after {
+              @apply mobile:content-['Yes'];
+            }
+          }
+        }
+        &.actions {
+          @apply mobile:absolute mobile:top-0 mobile:right-0 mobile:p-1;
+          > div {
+            @apply mobile:mobile:text-mid-900;
+          }
+        }
+      }
+    }
+  }
+}
