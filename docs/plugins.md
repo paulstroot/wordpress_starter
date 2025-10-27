@@ -5,7 +5,7 @@ This is not a complete list of all plug-ins, rather a list of notable plug-ins t
 
 ## Custom Plugins
 
-* [Ocupop Custom Plugin](https://github.com/ocupop/wordpress_starter/tree/main/src/wp-content/plugins/ocupop-custom).<br/>
+* [Custom Plugin](https://github.com/paulstroot/wordpress_starter/tree/main/src/wp-content/plugins/ocupop-custom).<br/>
 Just a clone of "hello dolly" do demonstrate how custom plug-ins can be included in the code reposotory.
 
 ## Paid and Premium Plug-ins

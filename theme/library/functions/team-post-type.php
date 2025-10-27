@@ -14,7 +14,7 @@
  */
 
 // let's create the function for the custom type
-function ocupop_projects_post_type()
+function pstroot_projects_post_type()
 {
     // creating (registering) the custom type
 
@@ -22,21 +22,21 @@ function ocupop_projects_post_type()
         'team',
         array(
           'labels' => array(
-            'name' => __('Team', 'ocupop'), /* This is the Title of the Group */
-            'singular_name' => __('Team Member', 'ocupop'), /* This is the individual type */
-            'all_items' => __('All Team Members', 'ocupop'), /* the all items menu item */
-            'add_new' => __('Add New', 'ocupop'), /* The add new menu item */
-            'add_new_item' => __('Add New Team Member', 'ocupop'), /* Add New Display Title */
-            'edit' => __('Edit', 'ocupop'), /* Edit Dialog */
-            'edit_item' => __('Edit Team', 'ocupop'), /* Edit Display Title */
-            'new_item' => __('New Team member', 'ocupop'), /* New Display Title */
-            'view_item' => __('View Team', 'ocupop'), /* View Display Title */
-            'search_items' => __('Search Team', 'ocupop'), /* Search Custom Type Title */
-            'not_found' =>  __('Nothing found in the Database.', 'ocupop'), /* This displays if there are no entries yet */
-            'not_found_in_trash' => __('Nothing found in Trash', 'ocupop'), /* This displays if there is nothing in the trash */
+            'name' => __('Team', 'pstroot'), /* This is the Title of the Group */
+            'singular_name' => __('Team Member', 'pstroot'), /* This is the individual type */
+            'all_items' => __('All Team Members', 'pstroot'), /* the all items menu item */
+            'add_new' => __('Add New', 'pstroot'), /* The add new menu item */
+            'add_new_item' => __('Add New Team Member', 'pstroot'), /* Add New Display Title */
+            'edit' => __('Edit', 'pstroot'), /* Edit Dialog */
+            'edit_item' => __('Edit Team', 'pstroot'), /* Edit Display Title */
+            'new_item' => __('New Team member', 'pstroot'), /* New Display Title */
+            'view_item' => __('View Team', 'pstroot'), /* View Display Title */
+            'search_items' => __('Search Team', 'pstroot'), /* Search Custom Type Title */
+            'not_found' =>  __('Nothing found in the Database.', 'pstroot'), /* This displays if there are no entries yet */
+            'not_found_in_trash' => __('Nothing found in Trash', 'pstroot'), /* This displays if there is nothing in the trash */
             'parent_item_colon' => ''
           ), /* end of arrays */
-          'description' => __('Custom post type for team members', 'ocupop'), /* Custom Type Description */
+          'description' => __('Custom post type for team members', 'pstroot'), /* Custom Type Description */
           'public' => true,
           'publicly_queryable' => true,
           'exclude_from_search' => false,
@@ -56,7 +56,7 @@ function ocupop_projects_post_type()
         ) /* end of options */
     ); /* end of register post type */
 }
-add_action('init', 'ocupop_projects_post_type');
+add_action('init', 'pstroot_projects_post_type');
 
 
 
@@ -72,16 +72,16 @@ register_taxonomy(
     array(
     'hierarchical' => true,     /* if this is true, it acts like categories */
     'labels' => array(
-      'name' => __('Team Categories', 'ocupop'), /* name of the custom taxonomy */
-      'singular_name' => __('Team Category', 'ocupop'), /* single taxonomy name */
-      'search_items' =>  __('Search Team Categories', 'ocupop'), /* search title for taxomony */
-      'all_items' => __('All Team Categories', 'ocupop'), /* all title for taxonomies */
-      'parent_item' => __('Parent Team Category', 'ocupop'), /* parent title for taxonomy */
-      'parent_item_colon' => __('Parent Team Category:', 'ocupop'), /* parent taxonomy title */
-      'edit_item' => __('Edit Team Category', 'ocupop'), /* edit custom taxonomy title */
-      'update_item' => __('Update Team Category', 'ocupop'), /* update title for taxonomy */
-      'add_new_item' => __('Add New Team Category', 'ocupop'), /* add new title for taxonomy */
-      'new_item_name' => __('New Team Category Name', 'ocupop') /* name title for taxonomy */
+      'name' => __('Team Categories', 'pstroot'), /* name of the custom taxonomy */
+      'singular_name' => __('Team Category', 'pstroot'), /* single taxonomy name */
+      'search_items' =>  __('Search Team Categories', 'pstroot'), /* search title for taxomony */
+      'all_items' => __('All Team Categories', 'pstroot'), /* all title for taxonomies */
+      'parent_item' => __('Parent Team Category', 'pstroot'), /* parent title for taxonomy */
+      'parent_item_colon' => __('Parent Team Category:', 'pstroot'), /* parent taxonomy title */
+      'edit_item' => __('Edit Team Category', 'pstroot'), /* edit custom taxonomy title */
+      'update_item' => __('Update Team Category', 'pstroot'), /* update title for taxonomy */
+      'add_new_item' => __('Add New Team Category', 'pstroot'), /* add new title for taxonomy */
+      'new_item_name' => __('New Team Category Name', 'pstroot') /* name title for taxonomy */
     ),
     'show_admin_column' => true,
     'show_ui' => true,
@@ -98,16 +98,16 @@ register_taxonomy(
     array(
     'hierarchical' => false,
     'labels' => array(
-      'name' => __('Team Tags', 'ocupop'),
-      'singular_name' => __('Team Tag', 'ocupop'),
-      'search_items' =>  __('Search Team Tags', 'ocupop'),
-      'all_items' => __('All Team Tags', 'ocupop'),
-      'parent_item' => __('Parent Team Tag', 'ocupop'),
-      'parent_item_colon' => __('Parent Team Tag:', 'ocupop'),
-      'edit_item' => __('Edit Team Tag', 'ocupop'),
-      'update_item' => __('Update Team Tag', 'ocupop'),
-      'add_new_item' => __('Add New Team Tag', 'ocupop'),
-      'new_item_name' => __('New Team Tag Name', 'ocupop')
+      'name' => __('Team Tags', 'pstroot'),
+      'singular_name' => __('Team Tag', 'pstroot'),
+      'search_items' =>  __('Search Team Tags', 'pstroot'),
+      'all_items' => __('All Team Tags', 'pstroot'),
+      'parent_item' => __('Parent Team Tag', 'pstroot'),
+      'parent_item_colon' => __('Parent Team Tag:', 'pstroot'),
+      'edit_item' => __('Edit Team Tag', 'pstroot'),
+      'update_item' => __('Update Team Tag', 'pstroot'),
+      'add_new_item' => __('Add New Team Tag', 'pstroot'),
+      'new_item_name' => __('New Team Tag Name', 'pstroot')
     ),
     'show_admin_column' => true,
     'show_ui' => true,

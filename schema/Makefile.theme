@@ -1,4 +1,4 @@
-# This makefile is NOT run in this codebase. When the theme is loaded into the Ocupop Wordpress Docker project, it is run there.
+# This makefile is NOT run in this codebase. When the theme is loaded into the Wordpress Docker project, it is run there.
 # Define all default plug-ins and themes for this theme here
 # Commands are un using wp-cli Commands
 # Every command should start with a tab, not two spaces.

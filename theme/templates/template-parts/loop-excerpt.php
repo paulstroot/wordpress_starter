@@ -22,7 +22,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ocupop' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'pstroot'),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -35,7 +35,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'ocupop' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'pstroot'),
 				'after'  => '</div>',
 			)
 		);
@@ -70,25 +70,25 @@
       );
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'ocupop' ) );
+			$categories_list = get_the_category_list( __( ', ', 'pstroot') );
 			if ( $categories_list ) {
 				printf(
 					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
 					'<div class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</div>',
 					' Categories: ',
-					__( 'Posted in', 'ocupop' ),
+					__( 'Posted in', 'pstroot'),
 					$categories_list
 				); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'ocupop' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', 'pstroot') );
 			if ( $tags_list ) {
 				printf(
 					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 					'<div class="tags-links">%1$s: <span class="screen-reader-text">%2$s </span>%3$s</div>',
 					'Tags: ',
-					__( 'Tags', 'ocupop' ),
+					__( 'Tags', 'pstroot'),
 					$tags_list
 				); // WPCS: XSS OK.
 			}

@@ -13,7 +13,7 @@
           />
         </a>
       </div>
-      <div class="flex items-center justify-center w-full sm:w-2/3 logo sm:justify-end">
+      <div class="flex justify-center items-center w-full sm:w-2/3 logo sm:justify-end">
 
         <?php
         wp_nav_menu(
@@ -22,7 +22,7 @@
             'container' => 'nav',
             'menu_id' => 'footer-menu-container',
             'menu_class' => 'flex flex-row gap-4',
-            'walker' => new Ocupop_Nav_Menu()
+            'walker' => new Pstroot_Nav_Menu()
             )
         );
         ?>
@@ -39,7 +39,7 @@
 
         <div class="">
           <?php
-            ocupop_show_social_icons();
+            pstroot_show_social_icons();
             ?>
         </div>
       </div>

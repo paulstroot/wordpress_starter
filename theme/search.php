@@ -39,35 +39,35 @@
       <h1 class="page-title">
         <?php
         printf(
-          esc_html__( 'Results for "%s"', 'ocupop' ),
-          '<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
+            esc_html__('Results for "%s"', 'pstroot'),
+            '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
         );
         ?>
       </h1>
     </header><!-- .page-header -->
 
     <?php
-      if ( have_posts() ) {
+    if (have_posts() ) {
         ?>
         <article class="flex gap-8 mb-4" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
           <figure class="w-64 post-thumbnail">
             <a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-              <?php echo get_the_post_thumbnail( null, 'medium' ,array( 'class' => 'w-full h-auto' ) ); ?>
+            <?php echo get_the_post_thumbnail(null, 'medium', array( 'class' => 'w-full h-auto' )); ?>
             </a>
           </figure>
 
           <div class="flex-1 entry-content">
-            <?php
-            the_title( sprintf( '<h2 class="mt-0 text-xl entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+          <?php
+            the_title(sprintf('<h2 class="mt-0 text-xl entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
 
             the_excerpt();
 
             wp_link_pages(
-              array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'ocupop' ),
+                array(
+                'before' => '<div class="page-links">' . __('Pages:', 'pstroot'),
                 'after'  => '</div>',
-              )
+                )
             );
             ?>
           </div><!-- .entry-content -->
@@ -75,11 +75,11 @@
 
         </article>
         <?php
-      } else {
+    } else {
 
         echo "<h2>Your search returned no results.</h2>";
 
-      }
+    }
     ?>
   </section>
 

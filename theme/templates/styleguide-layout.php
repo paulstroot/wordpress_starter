@@ -4,7 +4,6 @@
      */
 ?><?php get_header(); ?>
 
-
 <?php if (have_posts() ) { while ( have_posts() ) : the_post(); ?>
 <main class="main cf" id="main">
 
@@ -22,15 +21,15 @@
 <div class="divider divider-accent">Columns</div>
 <div class="overflow-x-hidden">
 <div class="container">
-<div class="flex-row w-full gap-4 my-4 sm:flex">
+<div class="flex-row gap-4 my-4 w-full sm:flex">
 <div class="p-4 sm:w-3/4 bg-secondary">Right Col 3/4</div>
 <div class="p-4 sm:w-1/4 bg-primary">Left Col 1/4</div>
 </div>
-<div class="flex-row w-full gap-4 my-4 sm:flex">
+<div class="flex-row gap-4 my-4 w-full sm:flex">
 <div class="p-4 sm:w-2/3 bg-secondary">Right Col 2/3</div>
 <div class="p-4 sm:w-1/3 bg-primary">Left Col 1/3</div>
 </div>
-<div class="flex-row w-full gap-4 my-4 sm:flex">
+<div class="flex-row gap-4 my-4 w-full sm:flex">
 <div class="p-4 sm:w-1/2 bg-secondary">Left Col 1/2</div>
 <div class="p-4 sm:w-1/2 bg-primary">Right Col 1/2</div>
 </div>
@@ -71,7 +70,7 @@ Right Col 1/4
 Paul</td>
 <td>
 <div class="mobile-label">Email:</div>
-paul@ocupop</td>
+paulstroot@gmail</td>
 <td>
 <div class="mobile-label">Phone:</div>
 +1 555 555 5555</td>
@@ -79,10 +78,10 @@ paul@ocupop</td>
 <tr>
 <td>
 <div class="mobile-label">Name:</div>
-Michael</td>
+Leo</td>
 <td>
 <div class="mobile-label">Email:</div>
-m@ocupop.com</td>
+leonardo@dicaprio.com</td>
 <td>
 <div class="mobile-label">Phone:</div>
 +1 555 555 5555</td>
@@ -90,10 +89,10 @@ m@ocupop.com</td>
 <tr>
 <td>
 <div class="mobile-label">Name:</div>
-Tom</td>
+John</td>
 <td>
 <div class="mobile-label">Email:</div>
-t@ocupop.com</td>
+John@Doe.com</td>
 <td>
 <div class="mobile-label">Phone:</div>
 +1 555 555 5555</td>

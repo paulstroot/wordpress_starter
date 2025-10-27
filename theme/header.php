@@ -39,7 +39,7 @@
                 'menu_class' =>  '',
                 'menu' => 'primary-nav',
                 'container' => 'primary-nav',
-                'walker' => new Ocupop_Nav_Menu()
+                'walker' => new Pstroot_Nav_Menu()
                 )
             );
 
@@ -48,7 +48,7 @@
                 'menu_class' =>  '',
                 'menu' => 'utility-nav',
                 'container' => 'utility-nav',
-                'walker' => new Ocupop_Nav_Menu()
+                'walker' => new Pstroot_Nav_Menu()
                 )
             );
             ?>

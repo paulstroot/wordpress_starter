@@ -9,12 +9,12 @@ if(isset($wp_customize)) {
      */
     $wp_customize->add_section(
         'social_settings', array(
-        'title' => __('Social Media', 'ocupop'),
+        'title' => __('Social Media', 'pstroot'),
         'priority' => 100,
         )
     );
 
-    $social_sites = ocupop_get_social_sites();
+    $social_sites = pstroot_get_social_sites();
     $priority = 5;
 
     foreach( $social_sites as $social_site ) {
@@ -46,7 +46,7 @@ if(isset($wp_customize)) {
   *
   * @link: https://www.competethemes.com/social-icons-wordpress-menu-theme-customizer/
   */
-function ocupop_get_social_sites()
+function pstroot_get_social_sites()
 {
 
      // Store social site names in array
@@ -95,28 +95,29 @@ function ocupop_get_social_sites()
      return $social_sites;
 }
 // Get user input from the Customizer and output the linked social media icons
-function ocupop_show_social_icons(){
+function pstroot_show_social_icons()
+{
 
-  $social_sites = ocupop_get_social_sites();
-  $active_sites = [];
-  //Any inputs that aren't empty are stored in $active_sites array
-  foreach( $social_sites as $social_site ) {
-    if (strlen(get_theme_mod($social_site->id)) > 0 ) {
-        $active_sites[] = $social_site;
-      }
-  }
+    $social_sites = pstroot_get_social_sites();
+    $active_sites = [];
+    //Any inputs that aren't empty are stored in $active_sites array
+    foreach( $social_sites as $social_site ) {
+        if (strlen(get_theme_mod($social_site->id)) > 0 ) {
+            $active_sites[] = $social_site;
+        }
+    }
 
-  // For each active social site, add it as a list item
-  if (!empty($active_sites) ) {
-      echo "<ul class='social-media-icons '>";
-      foreach ( $active_sites as $active_site ) {
-        ?><li>
+    // For each active social site, add it as a list item
+    if (!empty($active_sites) ) {
+        echo "<ul class='social-media-icons'>";
+        foreach ( $active_sites as $active_site ) {
+            ?><li>
           <a href="<?php echo esc_url(get_theme_mod($active_site->id)); ?>" title="<?php echo esc_attr($active_site->name); ?>" target="_blank" class="text-white">
             <i class="<?php echo esc_attr($active_site->class); ?>"></i>
           </a>
         </li><?php
-      }
-      echo "</ul>";
-  }
+        }
+        echo "</ul>";
+    }
 
 }

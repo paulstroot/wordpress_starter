@@ -38,7 +38,7 @@ when you add media to your content blocks. If you add more image sizes,
 duplicate one of the lines in the array and name it according to your
 new image size.
 */
-function ocupop_display_custom_image_sizes($sizes)
+function pstroot_display_custom_image_sizes($sizes)
 {
     global $_wp_additional_image_sizes;
     if (empty($_wp_additional_image_sizes)) {
@@ -51,7 +51,7 @@ function ocupop_display_custom_image_sizes($sizes)
     }
     return $sizes;
 }
-add_filter('image_size_names_choose', 'ocupop_display_custom_image_sizes');
+add_filter('image_size_names_choose', 'pstroot_display_custom_image_sizes');
 
 
 

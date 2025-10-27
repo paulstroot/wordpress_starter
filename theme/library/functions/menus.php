@@ -1,22 +1,22 @@
 <?php
 
 // registering header, utility and footer menus
-function ocupop_register_menus()
+function pstroot_register_menus()
 {
     register_nav_menus(
         array(
-          'primary-nav' => __('Primary Nav', 'ocupop'),
-          'utility-nav' => __('Utility Nav', 'ocupop'),
-          'footer' => __('Footer Navigation', 'ocupop')
+          'primary-nav' => __('Primary Nav', 'pstroot'),
+          'utility-nav' => __('Utility Nav', 'pstroot'),
+          'footer' => __('Footer Navigation', 'pstroot')
         )
     );
 }
-add_action('after_setup_theme', 'ocupop_register_menus');
+add_action('after_setup_theme', 'pstroot_register_menus');
 
 
 
 /**
- * Ocupop_Nav_Menu
+ * Pstroot_Nav_Menu
  *
  * Does a couple things:
  *  1) it wraps sub-menu lists in a <div class='sub-menu-wrap'> element. This allows
@@ -26,7 +26,7 @@ add_action('after_setup_theme', 'ocupop_register_menus');
  *     links to "#", the entire element is made into a button. If it has a link and children, the
  *     dropdown arrow button is separated from the link.
  */
-class Ocupop_Nav_Menu extends Walker_Nav_Menu
+class Pstroot_Nav_Menu extends Walker_Nav_Menu
 {
     private $curItem;
 

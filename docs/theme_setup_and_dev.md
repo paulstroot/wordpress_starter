@@ -6,7 +6,7 @@ This WordPress theme utilizes node to compile styles and scripts.
 
 ## Installation
 
-1. Start the containers in Docker (See [readme.md](https://github.com/ocupop/wordpress_starter/blob/main/README.md) on root level)
+1. Start the containers in Docker (See [readme.md](https://github.com/paulstroot/wordpress_starter/blob/main/README.md) on root level)
 2. Navigate your terminal to the theme folder `wp-content/themes/starter`
 3. Run `yarn install && yarn dev` in this folder.
 5. Run `yarn watch`.
