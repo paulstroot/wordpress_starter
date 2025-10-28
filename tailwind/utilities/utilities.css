@@ -42,7 +42,7 @@
 
 .no-x-padding-on-mobile{
   @media (max-width: 781px){
-    @apply px-0 !important;
+    @apply !px-0;
   }
 }
 

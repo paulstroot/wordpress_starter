@@ -2,32 +2,33 @@
 	"private": true,
 	"devDependencies": {
 		"@angular-eslint/template-parser": "^15.1.0",
-		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/container-queries": "^0.1.0",
-		"@tailwindcss/forms": "^0.5.3",
-		"@tailwindcss/line-clamp": "^0.4.2",
-		"@tailwindcss/typography": "^0.5.9",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/postcss": "^4.1.16",
+		"@tailwindcss/typography": "^0.5.19",
 		"@wordpress/prettier-config": "^2.7.0",
 		"archiver": "^5.3.1",
 		"browser-sync": "^2.28.1",
 		"cross-env": "^7.0.3",
-		"daisyui": "^4.9.0",
+		"daisyui": "^5.3.10",
 		"esbuild": "^0.16.16",
 		"eslint": "^8.31.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-php-markup": "^6.0.0",
 		"eslint-plugin-tailwindcss": "^3.8.0",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.4.21",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.2",
 		"prettier-plugin-tailwindcss": "^0.2.1",
-		"tailwindcss": "^3.2.4"
+		"tailwindcss": "^4.1.16"
 	},
 	"scripts": {
-		"development:tailwind:frontend": "npx tailwindcss --postcss -i ./tailwind/tailwind.css -c ./tailwind/tailwind.config.js -o ./theme/library/css/style.css",
-		"development:tailwind:editor": "cross-env _TW_TARGET=editor npx tailwindcss --postcss -i ./tailwind/admin-styles.css -c ./tailwind/tailwind.config.js -o ./theme/library/css/admin-styles.css ",
+		"OLD_development:tailwind:frontend": "npx tailwindcss --postcss -i ./tailwind/tailwind.css -c ./tailwind/tailwind.config.js -o ./theme/library/css/style.css",
+		"OLD_development:tailwind:editor": "cross-env _TW_TARGET=editor npx tailwindcss --postcss -i ./tailwind/admin-styles.css -c ./tailwind/tailwind.config.js -o ./theme/library/css/admin-styles.css ",
+		"development:tailwind:frontend": "postcss ./tailwind/tailwind.css -o ./theme/library/css/style.css",
+		"development:tailwind:editor": "postcss ./tailwind/admin-styles.css -o ./theme/library/css/admin-styles.css ",
 		"development:esbuild": "npx esbuild ./javascript/script.js --target=esnext --bundle --outfile=./theme/library/js/script.min.js --external:jquery",
 		"development:esbuild:top": "npx esbuild ./javascript/inline-header-scripts.js --target=esnext --bundle --outfile=./theme/library/js/top-script.min.js --external:jquery",
 		"development": "run-p development:**",
@@ -53,5 +54,7 @@
 		"bundle": "run-s production zip"
 	},
 	"prettier": "@wordpress/prettier-config",
-	"dependencies": {}
+	"dependencies": {
+		"postcss-import": "^16.1.1"
+	}
 }

@@ -11,4 +11,5 @@ require get_template_directory() . '/library/functions/menus.php';
 require get_template_directory() . '/library/functions/customizer-contactinfo.php';
 require get_template_directory() . '/library/functions/customizer-socialmedia.php';
 require get_template_directory() . '/library/functions/acf-blocks/index.php';
+require get_template_directory() . '/library/functions/fonts.php';
 

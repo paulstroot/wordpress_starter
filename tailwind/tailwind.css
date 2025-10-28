@@ -2,8 +2,18 @@
  * This injects Tailwind's base styles and any base styles registered by
  * plugins, then adds custom base styles.
  */
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins, then adds custom base styles.
+ */
 
-@import "tailwindcss/base";
+@import "tailwindcss";
+/* Example to target specific folders */
+/* @import "tailwindcss" source("../site*.{html,js,php}"); */
+
+
+@import "./base/theme.css";
+
 
 @import "./base/base.css";
 @import-glob "./base/**";
@@ -18,7 +28,7 @@
  * line). This is meant to simplify the process of integrating styles from
  * JavaScript components or WordPress plugins.
  */
-@import "tailwindcss/components";
+/* @import "tailwindcss/components"; */
 @import-glob "./components/**";
 
 
@@ -26,9 +36,10 @@
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
  */
-@import "tailwindcss/utilities";
+/* @import "tailwindcss/utilities"; */
 
 @import "./vendor/slick.css";
 @import "./vendor/slick-theme.css";
 
 @import-glob "./utilities/**";
+

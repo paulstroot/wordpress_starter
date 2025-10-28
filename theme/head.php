@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
-
     <script type="text/javascript" src="//use.typekit.com/ctb1jvz.js"></script>
 
     <?php wp_head(); ?>
