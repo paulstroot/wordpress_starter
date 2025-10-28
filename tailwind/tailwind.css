@@ -1,11 +1,9 @@
+@import "./base/comments-for-live-css-file.css";
 /**
  * This injects Tailwind's base styles and any base styles registered by
  * plugins, then adds custom base styles.
  */
-/**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins, then adds custom base styles.
- */
+
 
 @import "tailwindcss";
 /* Example to target specific folders */

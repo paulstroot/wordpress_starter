@@ -11,6 +11,7 @@ function pstroot_scripts()
  * Our main stylesheet
 */
     wp_enqueue_style('main', get_stylesheet_directory_uri() . '/library/css/style.css', array(), THEME_VERSION);
+    wp_enqueue_style('main-override', get_stylesheet_directory_uri() . '/library/css/override.css', array(), THEME_VERSION);
 
     /**
  * Our main javascript ('wp-localize-script' only needed if you need to pass javascript variables to scripts. Commmen when passing a nonce into a form script)
@@ -76,6 +77,7 @@ function pstroot_enqueue_admin_script()
 {
     wp_enqueue_script('main-admin', get_template_directory_uri() . '/library/js/admin-scripts.js', array(), THEME_VERSION, true);
     wp_enqueue_style('main-admin', get_template_directory_uri() . '/library/css/admin-styles.css', array(), THEME_VERSION);
+    wp_enqueue_style('main-admin-override', get_template_directory_uri() . '/library/css/admin-override.css', array(), THEME_VERSION);
 }
 add_action('admin_init', 'pstroot_enqueue_admin_script');
 

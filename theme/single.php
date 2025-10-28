@@ -89,8 +89,8 @@
                     /* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
                     '<div class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</div>',
                     ' Categories: ',
-                    __( 'Posted in', 'pstroot'),
-                    $categories_list
+                    esc_html__( 'Posted in', 'pstroot'),
+                    esc_html($categories_list)
                   ); // WPCS: XSS OK.
                 }
 
@@ -101,8 +101,8 @@
                     /* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
                     '<div class="tags-links">%1$s: <span class="screen-reader-text">%2$s </span>%3$s</div>',
                     'Tags: ',
-                    __( 'Tags', 'pstroot'),
-                    $tags_list
+                    esc_html__( 'Tags', 'pstroot'),
+                    esc_html($tags_list)
                   ); // WPCS: XSS OK.
                 }
               }

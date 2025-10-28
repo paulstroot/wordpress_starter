@@ -1,11 +1,10 @@
 [&larr; back to readme](../readme.md)
 # Theme setup
-
-This WordPress theme utilizes node to compile styles and scripts.
+This WordPress theme utilizes node and postcss to compile styles and scripts.
 
 
 ## Installation
-1. Make sure you have started your project with MAMP at https://www.???.localhost
+1. Make sure you have started your project on a local server (i.e. MAMP) at https://www.???.localhost
   a. When you set up this domain, update the proxy in the script "watch:browser-sync" to include your new development URL.
 2. Navigate your terminal to the theme folder `wp-content/themes/starter`
 3. Run `yarn install && yarn dev` in this folder.
@@ -13,7 +12,7 @@ This WordPress theme utilizes node to compile styles and scripts.
 4. You should now see your project at http://localhost:3000.
 5. Add [Tailwind utility classes](https://tailwindcss.com/docs/utility-first) with abandon
 
-> Note: Running Mamp server will open the project at [localhost:3000](https://wwww.???.localhost), but running yarn dev on the theme will open up the project at localhost:3000. the localhost:3000 URL will live-reload when changes are made.
+> Note: Running Mamp server will open the project at [localhost:3000](https://wwww.???.localhost), but running yarn dev on the theme will open up the project at localhost:3000. You can still view the site at your localhost URL, but the localhost:3000 URL will live-reload when changes are made.
 
 
 ## Generating a Zip file of the theme
