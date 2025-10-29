@@ -27,6 +27,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+
       - name: Add SSH Key to known_hosts
         env:
           KNOWN_HOSTS_ENTRY: ${{ secrets.KNOWN_HOSTS_ENTRY }}
@@ -74,8 +78,19 @@ jobs:
       #     SSH_USERNAME: ${{secrets.DREAMHOST_SSH_USERNAME}}
       #     SSH_HOSTNAME: ${{secrets.DREAMHOST_SSH_HOST}}
 
-      - name: Deploy to DreamHost
+      - name: Deploy via rsync and sshpass
+        env:
+          USERNAME: ${{ secrets.DREAMHOST_SSH_USERNAME }}
+          PASSWORD: ${{ secrets.DREAMHOST_PASSWORD }}
+          HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
+          DEPLOY_PATH: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD # Change this to your project path
+        run: |
+          sshpass -p "$PASSWORD" rsync -avz --delete --exclude .git/ ./ $USERNAME@$HOST:$DEPLOY_PATH
+
+
+
+      # - name: Deploy to DreamHost
         # run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
 
         #Dreamhost Recommended method - https://help.dreamhost.com/hc/en-us/articles/216661778-Rsync
-        run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av ./docs ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/runner/stage.mountedeagles.org/wp-content/themes/CICD
+        # run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av ./docs ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/runner/stage.mountedeagles.org/wp-content/themes/CICD
