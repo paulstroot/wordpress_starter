@@ -1,0 +1,40 @@
+# Must have the following secrets in your GitHub repository:
+# DREAMHOST_PRIVATE_KEY
+# DREAMHOST_SSH_HOST
+# DREAMHOST_SSH_USERNAME
+
+# Do this by going to your GitHub repository and clicking on the "Settings" tab,
+# then click on "Secrets and variables > Actions >  New repository secret".
+
+# How to create a Key pair on DreamHost
+# https://help.dreamhost.com/hc/en-us/articles/115001736691-How-to-create-a-Key-pair-overview
+
+# Make sure to update the directory to push to below under "Deploy to DreamHost"!
+
+name: Deploy code to DreamHost
+
+on:
+  # Trigger when code is pushed to the main branch
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DREAMHOST_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.DREAMHOST_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to DreamHost
+        run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICDCIDD --exclude '.git/' --exclude '.github/'

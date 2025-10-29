@@ -31,6 +31,9 @@ nbproject/
 ############
 ## Misc
 ############
+.env
+.env.development
+.env.production
 
 bin/
 tmp/
