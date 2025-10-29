@@ -37,15 +37,27 @@ jobs:
       #     key: ${{ secrets.DREAMHOST_PRIVATE_KEY }}
       #     known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
-      - name: Deploy to sandbox via rsync
+
+      # - name: rsync deployments
+      #   uses: burnett01/rsync-deployments@7.1.0
+      #   with:
+      #     switches: -avzr --delete --exclude="" --include="" --filter=""
+      #     path: src/
+      #     remote_path: /var/www/html/
+      #     remote_host: example.com
+      #     remote_port: 5555
+      #     remote_user: debian
+      #     remote_key: ${{ secrets.REMOTE_PRIVATE_KEY }}
+
+      - name: Deploy to server via rsync
         uses: trendyminds/github-actions-rsync@master
         with:
-          RSYNC_OPTIONS: -avz  --exclude node_modules --exclude '.git*'
+          RSYNC_OPTIONS: -avzr --delete --exclude node_modules --exclude '.git*'
           RSYNC_TARGET: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD
           RSYNC_SOURCE: ./
         env:
           SSH_PRIVATE_KEY: ${{secrets.DREAMHOST_PRIVATE_KEY}}
-          SSH_USERNAME: ${{secrets.DREAMHOST_SSH_USERNAMESSH_USERNAME}}
+          SSH_USERNAME: ${{secrets.DREAMHOST_SSH_USERNAME}}
           SSH_HOSTNAME: ${{secrets.DREAMHOST_SSH_HOST}}
 
       # - name: Deploy to DreamHost
