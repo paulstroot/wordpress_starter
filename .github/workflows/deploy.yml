@@ -37,4 +37,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.DREAMHOST_SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to DreamHost
-        run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICDCIDD --exclude '.git/' --exclude '.github/'
+        run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --exclude '.git/' --exclude '.github/'
