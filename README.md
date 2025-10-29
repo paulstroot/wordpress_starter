@@ -12,7 +12,6 @@
 =======
 
 ## Docs
-* [Setting up your Development environment for the first time.](docs/local_dev_setup.md)
 * [Theme Development](docs/theme_setup_and_dev.md)
 * [Plug-ins](docs/plugins.md)
 * [Using PHP CodeSniffer](docs/phpcs.md)
