@@ -66,5 +66,7 @@ jobs:
       #     SSH_HOSTNAME: ${{secrets.DREAMHOST_SSH_HOST}}
 
       - name: Deploy to DreamHost
-        run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
-        # run: rsync -e "/usr/bin/ssh" -av ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
+        # run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
+
+        #Dreamhost Recommended method - https://help.dreamhost.com/hc/en-us/articles/216661778-Rsync
+        run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av /Users/paulstroot/Documents/Work/personalDev/starters/WordPress/theme_dev/wordpress_starter/wp-content/themes ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD
