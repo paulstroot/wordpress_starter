@@ -1,13 +1,17 @@
 # Must have the following secrets in your GitHub repository:
-# DREAMHOST_PRIVATE_KEY
+# DREAMHOST_PASSWORD
 # DREAMHOST_SSH_HOST
 # DREAMHOST_SSH_USERNAME
+# KNOWN_HOSTS_ENTRY
 
 # Do this by going to your GitHub repository and clicking on the "Settings" tab,
 # then click on "Secrets and variables > Actions >  New repository secret".
 
 # How to create a Key pair on DreamHost
 # https://help.dreamhost.com/hc/en-us/articles/115001736691-How-to-create-a-Key-pair-overview
+
+# Finding Known Hosts Entry
+# To find the Known Hosts Entry, go to your Dreamhost Panel, on the left side of your screen, click the more tab and then go to SSH Keys and you will be able to find the Known Hosts entry there.
 
 # Make sure to update the directory to push to below under "Deploy to DreamHost"!
 
@@ -30,7 +34,6 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
-
       - name: Add SSH Key to known_hosts
         env:
           KNOWN_HOSTS_ENTRY: ${{ secrets.KNOWN_HOSTS_ENTRY }}
@@ -39,58 +42,14 @@ jobs:
           mkdir -p ~/.ssh
           echo "$KNOWN_HOSTS_ENTRY" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-      # - name: Install SSH Key
-      #   uses: shimataro/ssh-key-action@v2
-      #   with:
-      #     key: ${{ secrets.DREAMHOST_PRIVATE_KEY }}
-      #     known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
-
-      # - name: Adding Known Hosts
-      #   run:  ssh-keyscan -H ${{ secrets.DREAMHOST_SSH_HOST }} >> /home/${{ secrets.DREAMHOST_SSH_USERNAME }}/.ssh/known_hosts
-
-
-
-
-##### Error loading key "(stdin)": error in libcrypto
-##### ssh: connect to host *** port 22: Operation timed out
-      # - name: rsync deployments
-      #   uses: burnett01/rsync-deployments@7.1.0
-      #   with:
-      #     switches: -avzr --delete --exclude node_modules --exclude '.git*'
-      #     path: ./
-      #     remote_path: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD
-      #     remote_host: ${{secrets.DREAMHOST_SSH_HOST}}
-      #     remote_user: ${{secrets.DREAMHOST_SSH_USERNAME}}
-      #     remote_key: ${{ secrets.REMOTE_PRIVATE_KEY }}
-
-
-
-##### ssh: connect to host *** port 22: Operation timed out
-      # - name: Deploy to server via rsync
-      #   uses: trendyminds/github-actions-rsync@master
-      #   with:
-      #     RSYNC_OPTIONS: -avzr --delete --exclude node_modules --exclude '.git*'
-      #     RSYNC_TARGET: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD
-      #     RSYNC_SOURCE: ./
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{secrets.DREAMHOST_PRIVATE_KEY}}
-      #     SSH_USERNAME: ${{secrets.DREAMHOST_SSH_USERNAME}}
-      #     SSH_HOSTNAME: ${{secrets.DREAMHOST_SSH_HOST}}
-
-      - name: Deploy via rsync and sshpass
+      - name: Deploy to DreamHost
         env:
           USERNAME: ${{ secrets.DREAMHOST_SSH_USERNAME }}
           PASSWORD: ${{ secrets.DREAMHOST_PASSWORD }}
           HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
+          DEPLOY_SOURCE: ./ # the github directory to deploy.
           DEPLOY_PATH: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD # Change this to your project path
         run: |
-          sshpass -p "$PASSWORD" rsync -avz --delete --exclude .git/ ./ $USERNAME@$HOST:$DEPLOY_PATH
+          sshpass -p "$PASSWORD" rsync -avz --delete --exclude .git --exclude .github --exclude node_scripts/ $DEPLOY_SOURCE $USERNAME@$HOST:$DEPLOY_PATH
 
-
-
-      # - name: Deploy to DreamHost
-        # run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
-
-        #Dreamhost Recommended method - https://help.dreamhost.com/hc/en-us/articles/216661778-Rsync
-        # run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av ./docs ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/runner/stage.mountedeagles.org/wp-content/themes/CICD
