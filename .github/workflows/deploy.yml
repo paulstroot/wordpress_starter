@@ -71,4 +71,4 @@ jobs:
         # run: rsync -avz ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD --filter '- /.git' --filter '- /.github'
 
         #Dreamhost Recommended method - https://help.dreamhost.com/hc/en-us/articles/216661778-Rsync
-        run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av ./ ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD
+        run: rsync --filter '- /.git'  -e "/usr/bin/ssh" -av ./docs ${{ secrets.DREAMHOST_SSH_USERNAME }}@${{ secrets.DREAMHOST_SSH_HOST }}:/home/runner/stage.mountedeagles.org/wp-content/themes/CICD
