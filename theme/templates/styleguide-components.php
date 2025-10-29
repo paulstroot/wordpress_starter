@@ -282,7 +282,7 @@ $accordion_content = [
           <div class="flex tinyslider-example ">
             <div class="p-10 bg-red-300" role=group aria-roledescription="slide" aria-labelledby="slide-1_heading">
               <article>
-                <h3 id="slide-1_heading"><a class='leading-3 text-md' href="https://www.smashingmagazine.com/2023/02/guide-building-accessible-carousels/">Accessible Carousels</a></h3>
+                <h3 id="slide-1_heading"><a class='leading-3 text-base' href="https://www.smashingmagazine.com/2023/02/guide-building-accessible-carousels/">Accessible Carousels</a></h3>
                 <p>Most carousels come along with usability and accessibility issues. To avoid these issues, this article addresses step-by-step design considerations as well as semantic requirements for carousels to be accessible. </p>
               </article>
             </div>
@@ -292,7 +292,7 @@ $accordion_content = [
                 <p>W3C's Guidance on how to implement an accessible carousel.</p>
               </article>
             </div>
-            <div class="p-10 bg-indigo-400" role=group aria-roledescription="slide" aria-labelledby="slide-3_heading">
+            <div class="p-10 bg-primary" role=group aria-roledescription="slide" aria-labelledby="slide-3_heading">
               <article>
                 <h3 id="slide-3_heading">Aria Roles on Container</h3>
                 <p>Note that the container element has "ariea-labeldby" which points to the h2 element. If there is not a visible header element you could use the aria-label tag and name the carousel using a string parameter.</p>

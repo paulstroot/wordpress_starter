@@ -1,7 +1,7 @@
 /* COLORS, FONTS, PADDING and BORDERS */
 .nav-wrapper{
   &.open{
-    @apply @max-md:top-[4.5rem];
+    @apply max-md:top-[4.5rem];
   }
   @apply bg-gray-200 md:bg-white;
   ul{
@@ -37,7 +37,7 @@
     ul.sub-menu{
       @apply m-0 pl-0;
       button.nav-link, a {
-        @apply @max-md:pl-12; /* Indent the sub-nav */
+        @apply max-md:pl-12; /* Indent the sub-nav */
       }
     }
 
@@ -83,9 +83,9 @@
 .nav-wrapper {
   @apply absolute hidden border right-0;
   @apply md:relative md:flex md:flex-col-reverse md:items-end md:space-x-10 md:border-none md:bg-transparent/0;
-  @apply @max-md:left-0 ;
+  @apply max-md:left-0 ;
   &.open{
-    @apply @max-md:block;
+    @apply max-md:block;
   }
   > ul {
     @apply md:flex md:flex-row items-start;
@@ -135,7 +135,7 @@
         @apply md:whitespace-nowrap;
       }
       a, button.nav-link{
-        @apply @max-md:pr-12; /* keeps the arrow from overlapping the text */
+        @apply max-md:pr-12; /* keeps the arrow from overlapping the text */
       }
     }
     button[aria-expanded="true"] {
@@ -226,7 +226,7 @@
       @apply py-1;
     }
     button.nav-link .arrow{
-      @apply @max-md:top-0 ;
+      @apply max-md:top-0 ;
     }
   }
 }

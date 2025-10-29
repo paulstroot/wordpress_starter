@@ -15,25 +15,29 @@
   --radius-box: 0.5rem;
 
   /* ...require('daisyui/src/theming/themes')['[data-theme=light]'], */
-  --font-serif: "Montserrat", sans-serif;
+  --font-serif: "Georgia", serif;
   --font-sans: "Montserrat", sans-serif;
   --font-headline: "Montserrat", sans-serif;
   --font-icon: "remixicon", sans-serif;
 
   /* Tailwind font sizes */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-  --text-7xl: 4.5rem;
-  --text-8xl: 6rem;
-  --text-9xl: 8rem;
+  --text-5xl: 3.875rem; /* 62px - h1 (or 60 sometimes) */
+  --text-4xl: 2.4375rem; /* 39px - follow us on social:  */
+  --text-3xl: 2.25rem; /* 36px - h2 */
+  --text-2xl: 31px; /* 31px - parasole gift cards sub-copy:  */
+  --text-xl: 30px; /* 30px - top nav link */
+  --text-lg: 24px;
+  --text-base: 20px  /* bodycopy, top nav sub-link  */
+  --text-sm:  18px /* button, form label food blog intro */
+  --text-xs:  15px /* footer nav */
+
+  --text-tiny: 12.5px; /* copyright */
+  --text-tiny--line-height: 1.4rem;
+  --text-tiny--letter-spacing: 0.125rem;
+  --text-tiny--font-weight: 500;
+
+
+
 
   /* Tailwind Spacing */
   --spacing-8xl: 96rem;
@@ -46,7 +50,6 @@
  	--breakpoint-lg: 1024px;
  	--breakpoint-xl: 1280px;
  	--breakpoint-2xl: 1536px;
- 	--breakpoint-2xl: 1536px
 
 
   /* Tailwind Colors */

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<main class="container main cf" id="main">
-    <section>
+	<main class="main cf" id="main">
+    <section class="container">
       <?php
         $page_title = get_field('header_copy') ? get_field('header_copy') : get_the_title();
       ?>

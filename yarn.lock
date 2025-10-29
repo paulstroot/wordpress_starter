@@ -2406,6 +2406,11 @@ possible-typed-array-names@^1.0.0:
   resolved "https://registry.npmjs.org/possible-typed-array-names/-/possible-typed-array-names-1.0.0.tgz"
   integrity sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==
 
+postcss-clampwind@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/postcss-clampwind/-/postcss-clampwind-0.0.7.tgz#4eaf87c5f6777663e9e349912181e94e99c4554d"
+  integrity sha512-ClwSJwdWuZxHXDdfOLNSoSDnmun4YY5fYCcyFNxLvU0PfOOvFfvrQ3fec3cQhBzdf9CMfTUG1nooULsI6cfZsQ==
+
 postcss-cli@^11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/postcss-cli/-/postcss-cli-11.0.1.tgz#341188ff7b26b19b206ca923ae2bd979751e7da7"

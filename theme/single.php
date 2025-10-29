@@ -3,9 +3,9 @@
 ?>
 
 
-<main class="container main cf" id="main">
+<main class="main cf" id="main">
 
-  <section>
+  <section class="container">
     <?php
       if ( have_posts() ) {
 

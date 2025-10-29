@@ -6,7 +6,7 @@
   }
 
   thead {
-    @apply @max-md:hidden;
+    @apply max-md:hidden;
     /* @apply rounded-t-lg overflow-hidden; */
     th {
       @apply font-thin text-light;
@@ -57,30 +57,30 @@
   tbody {
     @apply bg-transparent;
     tr {
-      @apply @max-md:flex @max-md:flex-col @max-md:relative rounded-lg hover:bg-inherit;
+      @apply max-md:flex max-md:flex-col max-md:relative rounded-lg hover:bg-inherit;
       td {
-        @apply @max-md:block;
-        @apply @max-md:order-2;
+        @apply max-md:block;
+        @apply max-md:order-2;
         &.title {
-          @apply @max-md:bg-mid-300 @max-md:order-1 @max-md:pr-12 @max-md:font-bold;
+          @apply max-md:bg-mid-300 max-md:order-1 max-md:pr-12 max-md:font-bold;
         }
         &.accepted {
-          @apply @max-md:order-9;
+          @apply max-md:order-9;
           .rounded-full {
-            @apply @max-md:inline-block;
-            @apply @max-md:bg-transparent @max-md:border-none;
+            @apply max-md:inline-block;
+            @apply max-md:bg-transparent max-md:border-none;
             &:after {
-              @apply @max-md:content-['No'];
+              @apply max-md:content-['No'];
             }
             &.bg-success:after {
-              @apply @max-md:content-['Yes'];
+              @apply max-md:content-['Yes'];
             }
           }
         }
         &.actions {
-          @apply @max-md:absolute @max-md:top-0 @max-md:right-0 @max-md:p-1;
+          @apply max-md:absolute max-md:top-0 max-md:right-0 max-md:p-1;
           > div {
-            @apply @max-md:text-mid-900;
+            @apply max-md:text-mid-900;
           }
         }
       }
