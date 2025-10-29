@@ -50,7 +50,7 @@ jobs:
           PASSWORD: ${{ secrets.DREAMHOST_PASSWORD }}
           HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
           DEPLOY_SOURCE: ./ # the github directory to deploy.
-          DEPLOY_PATH: /home/dh_66yrdi/stage.mountedeagles.org/wp-content/themes/CICD # Change this to your project path
+          DEPLOY_PATH: /home/dh_parasole/parasole.dreamhosters.com/wp-content/themes/parasole # Change this to your project path
         run: |
           sshpass -p "$PASSWORD" rsync -avz --delete --exclude .git --exclude .github --exclude node_scripts/ $DEPLOY_SOURCE $USERNAME@$HOST:$DEPLOY_PATH
 
